@@ -47,38 +47,40 @@ public final class UseSet {
 //		}
 //    	System.out.println("cyle without iterator\n" + treeSet); //ConcurrentModificationException
     	
-    	var temporarySet = new TreeSet<>();
-    	for (String string : treeSet) {
-			if (Integer.parseInt(string) % 3 == 0) {
-				temporarySet.add(string);
-			}
-		}
-    	treeSet.removeAll(temporarySet);
-    	System.out.println("temporary set\n" + temporarySet);
-    	System.out.println("cyle without iterator\n" + treeSet);
+//    	var temporarySet = new TreeSet<>();
+//    	for (String string : treeSet) {
+//			if (Integer.parseInt(string) % 3 == 0) {
+//				temporarySet.add(string);
+//			}
+//		}
+//    	treeSet.removeAll(temporarySet);
+//    	System.out.println("temporary set\n" + temporarySet);
+//    	System.out.println("cyle without iterator\n" + treeSet);
 
     	
-//    	final var iterator = treeSet.iterator();
-//    	while (iterator.hasNext()) {
-//    		if (Integer.parseInt(iterator.next()) % 3 == 0) {
-//				iterator.remove();
-//			}
-//    	}
+    	final var iterator = treeSet.iterator();
+    	while (iterator.hasNext()) {
+    		if (Integer.parseInt(iterator.next()) % 3 == 0) {
+				iterator.remove();
+			}
+    	}
     	
          /* 5) Prints the content of the Set using a for-each costruct
          */
-//    	System.out.println(treeSet);
+    	System.out.println(treeSet);
     	
          /* 6) Verifies if all the numbers left in the set are even
          */
     	final var iterator2 = treeSet.iterator();
     	boolean allEven = true;
-    	while (iterator2.hasNext()) {
+    	int i = 0;//test for control how many time "while" run
+    	while (iterator2.hasNext() && allEven) {
 			if (Integer.parseInt(iterator2.next()) % 2 == 1) {
 				allEven = false;
+				i++;
 			}	
 		}
-    	System.out.println("Remains items are all even? " + allEven);
+    	System.out.println(i + " Remains items are all even? " + allEven);
 
     }
 }
