@@ -60,7 +60,7 @@ public final class UseSet {
 				allEven = false;
 			}	
 		}
-    	System.out.println("Remain item are all even? " + allEven);
+    	System.out.println("Remains items are all even? " + allEven);
 
     }
 }
