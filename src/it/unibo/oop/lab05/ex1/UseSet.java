@@ -1,6 +1,8 @@
 package it.unibo.oop.lab05.ex1;
 
+import java.util.Collection;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Example class using {@link Set}.
@@ -21,18 +23,44 @@ public final class UseSet {
          * order:
          * 
          * 1) Builds a TreeSet containing Strings
-         * 
-         * 2) Populates such Collection with all the Strings ranging from "1" to
+         */ 
+    	final Collection<String> treeSet = new TreeSet<>();
+    	
+         /* 2) Populates such Collection with all the Strings ranging from "1" to
          * "20"
-         * 
-         * 3) Prints its content
-         * 
-         * 4) Removes all those strings whose represented number is divisible by
-         * three
-         * 
-         * 5) Prints the content of the Set using a for-each costruct
-         * 
-         * 6) Verifies if all the numbers left in the set are even
          */
+    	for (int i = 1; i < 21; i++) {
+			treeSet.add(Integer.toString(i));
+		}
+    	
+         /* 3) Prints its content
+         */ 
+    	System.out.println(treeSet);
+    	
+         /* 4) Removes all those strings whose represented number is divisible by
+         * three
+         */
+    	final var iterator = treeSet.iterator();
+    	while (iterator.hasNext()) {
+    		if (Integer.parseInt(iterator.next()) % 3 == 0) {
+				iterator.remove();
+			}
+    	}
+    	
+         /* 5) Prints the content of the Set using a for-each costruct
+         */
+    	System.out.println(treeSet);
+    	
+         /* 6) Verifies if all the numbers left in the set are even
+         */
+    	final var iterator2 = treeSet.iterator();
+    	boolean allEven = true;
+    	while (iterator2.hasNext()) {
+			if (Integer.parseInt(iterator2.next()) % 2 == 1) {
+				allEven = false;
+			}	
+		}
+    	System.out.println("Remain item are all even? " + allEven);
+
     }
 }
