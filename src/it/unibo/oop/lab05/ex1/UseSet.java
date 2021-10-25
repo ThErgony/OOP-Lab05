@@ -40,16 +40,27 @@ public final class UseSet {
          /* 4) Removes all those strings whose represented number is divisible by
          * three
          */
-    	final var iterator = treeSet.iterator();
-    	while (iterator.hasNext()) {
-    		if (Integer.parseInt(iterator.next()) % 3 == 0) {
-				iterator.remove();
+    	var temporarySet = new TreeSet<>();
+    	for (String string : treeSet) {
+			if (Integer.parseInt(string) % 3 == 0) {
+				temporarySet.add(string);
 			}
-    	}
+		}
+    	treeSet.removeAll(temporarySet);
+    	System.out.println("temporary set\n" + temporarySet);
+    	System.out.println("cyle without iterator\n" + treeSet);
+
+    	
+//    	final var iterator = treeSet.iterator();
+//    	while (iterator.hasNext()) {
+//    		if (Integer.parseInt(iterator.next()) % 3 == 0) {
+//				iterator.remove();
+//			}
+//    	}
     	
          /* 5) Prints the content of the Set using a for-each costruct
          */
-    	System.out.println(treeSet);
+//    	System.out.println(treeSet);
     	
          /* 6) Verifies if all the numbers left in the set are even
          */
