@@ -40,6 +40,13 @@ public final class UseSet {
          /* 4) Removes all those strings whose represented number is divisible by
          * three
          */
+//    	for (String string : treeSet) {
+//			if (Integer.parseInt(string) % 3 == 0) {
+//				treeSet.remove(string);
+//			}
+//		}
+//    	System.out.println("cyle without iterator\n" + treeSet); //ConcurrentModificationException
+    	
     	var temporarySet = new TreeSet<>();
     	for (String string : treeSet) {
 			if (Integer.parseInt(string) % 3 == 0) {
