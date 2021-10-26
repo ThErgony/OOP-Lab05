@@ -17,7 +17,7 @@ public class WarehouseImpl implements Warehouse {
 	@Override
 	public Set<String> allNames() {
 		final Set<String> productNames = new LinkedHashSet<>();
-		for (Product p : products) {
+		for (final Product p : this.products) {
 			productNames.add(p.getName());
 		}
 		return productNames;
@@ -25,12 +25,12 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public Set<Product> allProducts() {
-		return this.products;
+		return new LinkedHashSet<>(this.products);
 	}
 
 	@Override
 	public boolean containsProduct(final Product p) {
-		for (final Product p2 : products) {
+		for (final Product p2 : this.products) {
 			if (p2.getName() == p.getName()) {
 				return true;
 			}
@@ -40,7 +40,7 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public double getQuantity(String name) {
-		for (final Product p2 : products) {
+		for (final Product p2 : this.products) {
 			if (p2.getName() == name) {
 				return p2.getQuantity();
 			}
