@@ -1,36 +1,36 @@
 package it.unibo.oop.lab05.ex3;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class WarehouseImpl implements Warehouse {
 
-	private Product[] product = new Product[0];
+	private LinkedHashSet<Product> products;
 	
 	@Override
 	public void addProduct(final Product p) {
 		if (!this.containsProduct(p)) {
-			this.product = Arrays.copyOf(product, product.length + 1);
-			this.product[product.length] = p;
+			this.products.add(p);
 		}
 	}
 
 	@Override
 	public Set<String> allNames() {
-		// TODO Auto-generated method stub
-		return null;
+		final Set<String> productNames = null;
+		for (Product p : products) {
+			productNames.add(p.getName());
+		}
+		return productNames;
 	}
 
 	@Override
 	public Set<Product> allProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.products;
 	}
 
 	@Override
 	public boolean containsProduct(final Product p) {
-		for (final Product p2 : product) {
+		for (final Product p2 : products) {
 			if (p2.getName() == p.getName()) {
 				return true;
 			}
@@ -40,7 +40,7 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public double getQuantity(String name) {
-		for (final Product p2 : product) {
+		for (final Product p2 : products) {
 			if (p2.getName() == name) {
 				return p2.getQuantity();
 			}
