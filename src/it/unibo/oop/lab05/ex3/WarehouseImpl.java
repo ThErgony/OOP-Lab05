@@ -10,9 +10,10 @@ public class WarehouseImpl implements Warehouse {
 	
 	@Override
 	public void addProduct(Product p) {
-		this.product = Arrays.copyOf(product, product.length + 1);
-		this.product[product.length] = p;
-
+		if (!this.containsProduct(p)) {
+			this.product = Arrays.copyOf(product, product.length + 1);
+			this.product[product.length] = p;
+		}
 	}
 
 	@Override
@@ -29,7 +30,11 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public boolean containsProduct(Product p) {
-		// TODO Auto-generated method stub
+		for (Product p2 : product) {
+			if (p2.getName() == p.getName()) {
+				return true;
+			}
+		}
 		return false;
 	}
 
