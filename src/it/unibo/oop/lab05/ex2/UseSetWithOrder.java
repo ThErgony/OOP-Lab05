@@ -9,15 +9,7 @@ public final class UseSetWithOrder {
 
     private UseSetWithOrder() {
     }
-    
-    
-    @Override
-	public String toString() {
-		return "UseSetWithOrder [toString()=" + super.toString() + "/n]";
-	}
-
-
-	/**
+    	/**
      * @param args
      *            ignored
      */
@@ -39,7 +31,7 @@ public final class UseSetWithOrder {
     	
          /* 3) Prints the set, which must be ordered
          */
-    	for (String string : treeSet) {
+    	for (final String string : treeSet) {
 			System.out.println(string);
 		}
     }
