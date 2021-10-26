@@ -39,6 +39,7 @@ public final class UseWarehouse {
         w.addProduct(p3);
         w.addProduct(p1);
         w.addProduct(p2);
+        w.addProduct(p3);
 
         System.out.println(w.allNames());
         System.out.println(w.allProducts());

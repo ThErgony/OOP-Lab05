@@ -11,6 +11,9 @@ public class WarehouseImpl implements Warehouse {
 	public void addProduct(final Product p) {
 		if (!this.containsProduct(p)) {
 			this.products.add(p);
+			System.out.println("Product " + p.getName() + " add to warehouse");
+		} else {
+			System.out.println("Product " + p.getName() + " already present, impossible add more.");
 		}
 	}
 
@@ -30,18 +33,19 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public boolean containsProduct(final Product p) {
-		for (final Product p2 : this.products) {
-			if (p2.getName() == p.getName()) {
-				return true;
-			}
-		}
-		return false;
+//		for (final Product p2 : this.products) {
+//			if (p2.getName().equals(p.getName())) {
+//				return true;
+//			}
+//		}
+//		return false;
+		return products.contains(p);
 	}
 
 	@Override
 	public double getQuantity(String name) {
 		for (final Product p2 : this.products) {
-			if (p2.getName() == name) {
+			if (p2.getName().equals(name)) {
 				return p2.getQuantity();
 			}
 		}
