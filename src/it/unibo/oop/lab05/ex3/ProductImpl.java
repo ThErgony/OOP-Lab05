@@ -7,7 +7,7 @@ public class ProductImpl implements Product {
 	
 	
 	
-	public ProductImpl(final String name, final int quantity) {
+	public ProductImpl(final String name, final double quantity) {
 		super();
 		this.name = name;
 		this.quantity = quantity;
