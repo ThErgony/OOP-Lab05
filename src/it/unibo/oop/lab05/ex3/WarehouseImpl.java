@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class WarehouseImpl implements Warehouse {
 
-	private LinkedHashSet<Product> products;
+	private Set<Product> products = new LinkedHashSet<>();
 	
 	@Override
 	public void addProduct(final Product p) {
@@ -16,7 +16,7 @@ public class WarehouseImpl implements Warehouse {
 
 	@Override
 	public Set<String> allNames() {
-		final Set<String> productNames = null;
+		final Set<String> productNames = new LinkedHashSet<>();
 		for (Product p : products) {
 			productNames.add(p.getName());
 		}

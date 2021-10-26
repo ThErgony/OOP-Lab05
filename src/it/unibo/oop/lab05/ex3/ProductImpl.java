@@ -23,4 +23,9 @@ public class ProductImpl implements Product {
 		return this.quantity;
 	}
 
+	@Override
+	public String toString() {
+		return "[" + name + ", quantity = " + quantity + "]";
+	}
+
 }
