@@ -1,12 +1,17 @@
 package it.unibo.oop.lab05.ex3;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Set;
 
 public class WarehouseImpl implements Warehouse {
 
+	private Product[] product = new Product[0];
+	
 	@Override
 	public void addProduct(Product p) {
-		// TODO Auto-generated method stub
+		this.product = Arrays.copyOf(product, product.length + 1);
+		this.product[product.length] = p;
 
 	}
 
