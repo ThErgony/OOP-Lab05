@@ -29,7 +29,7 @@ public final class UseSet {
          /* 2) Populates such Collection with all the Strings ranging from "1" to
          * "20"
          */
-    	for (int i = 1; i < 21; i++) {
+    	for (int i = 1; i <= 20; i++) {
 			treeSet.add(Integer.toString(i));
 		}
     	
